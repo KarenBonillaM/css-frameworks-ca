@@ -75,3 +75,8 @@ input:invalid + .invalid-feedback {
   opacity: 0.5;
   cursor: not-allowed;
 }
+
+.postImg {
+  max-height: 350px;
+  width: 600px;
+}
