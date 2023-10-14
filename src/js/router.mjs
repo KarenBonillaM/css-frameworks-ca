@@ -7,10 +7,10 @@ export default function router() {
     case '/profile/login/index.html':
       listeners.setLoginFormListener()
       return;
-    case '/profile/register/index.html':
+    case '/profile/register/':
       listeners.setRegisterFormListener()
       return;
-    case '/post/create/index.html':
+    case '/posts/index.html':
       listeners.setCreatePostFormListener()
       return;
     case '/post/edit/index.html':
@@ -21,5 +21,4 @@ export default function router() {
       return;
 }
 }
-
 

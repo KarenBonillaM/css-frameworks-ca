@@ -1,4 +1,5 @@
 import { API_SOCIAL_URL } from "../constants.mjs";
+
 import { authFetch } from "../authFetch.mjs";
 
 const action = "/posts";
@@ -17,5 +18,4 @@ export async function updatePost(postData) {
   })
 
   return await response.json()
-
 } 
