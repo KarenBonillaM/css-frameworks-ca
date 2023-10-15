@@ -3,8 +3,7 @@ import router from "./router.mjs";
 router();
 
 // import * as listeners from "./handlers/index.mjs";
-import * as templates from "./templates/index.mjs";
-import * as postMethods from "./api/posts/index.mjs";
+
 
 // const path = location.pathname;
 
@@ -19,23 +18,26 @@ import * as postMethods from "./api/posts/index.mjs";
 // } else if (path === '/profile/edit/index.html') { listeners.setUpdateProfileListener()
 // }
 
-async function testTemplate() {
-  const posts = await postMethods.getPosts();
-  const container = document.querySelector("#posts");
-  templates.renderPostTemplates(posts, container);
-}
+// import * as templates from "./templates/index.mjs";
+// import * as postMethods from "./api/posts/index.mjs";
 
-testTemplate()
+// async function testTemplate() {
+//   const posts = await postMethods.getPosts();
+//   const container = document.querySelector("#posts");
+//   templates.renderPostTemplates(posts, container);
+// }
 
-const queryString = document.location.search;
-const params = new URLSearchParams(queryString);
-const id = params.get("id");
+// testTemplate()
 
-async function testPostTemplate() {
-  const post = await postMethods.getPost(id);
-  const container = document.querySelector("#post");
-  templates.renderPostTemplate(post, container);
-}
+// const queryString = document.location.search;
+// const params = new URLSearchParams(queryString);
+// const id = params.get("id");
 
-testPostTemplate()
+// async function testPostTemplate() {
+//   const post = await postMethods.getPost(id);
+//   const container = document.querySelector("#post");
+//   templates.renderPostTemplate(post, container);
+// }
+
+// testPostTemplate()
 

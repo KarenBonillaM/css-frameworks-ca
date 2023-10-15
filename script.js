@@ -3,9 +3,9 @@
 // End-points:
 // Register: /social/auth/register
 // Login: /social/auth/login
-//Get All posts: /social/posts
+//Get All posts: /social/posts*/
 
-//---------------- Registers user
+/*//---------------- Registers user
 
 /**
  * API call that registers the user
@@ -13,8 +13,8 @@
  * @param {any} userData
  * ```js
  * registerUser(registerUrl, userToRegister);
- */
-/*async function registerUser(url, userData) {
+ 
+async function registerUser(url, userData) {
   try{
     const postData = {
       method: 'POST',
@@ -41,11 +41,12 @@ const userToRegister = {
 const registerUrl = `${API_BASE_URL}/social/auth/register`;
 
 
-//registerUser(registerUrl, userToRegister);
+//registerUser(registerUrl, userToRegister);*/
+
 
 // ----------- Login user
 
-async function loginUser(url, userData) {
+/*async function loginUser(url, userData) {
   try {
     const postData = {
       method: 'POST',

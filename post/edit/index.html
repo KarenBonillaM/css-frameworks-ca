@@ -17,7 +17,10 @@
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
       integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT"
       crossorigin="anonymous"></script>
-    <script src="/src/js/index.mjs" defer type="module"></script>
+    <script
+      src="/src/js/templates/userPostsEdit.mjs"
+      defer
+      type="module"></script>
   </head>
   <body>
     <header>
@@ -85,6 +88,9 @@
       <section id="feed-container" class="container-fluid">
         <div class="row justify-content-center">
           <div class="col-12 col-md-6">
+            <section id="posts-container" class="col-md-6">
+              <div id="postUser"></div>
+            </section>
             <form id="editPost">
               <div class="mb-3">
                 <div class="form-floating">
