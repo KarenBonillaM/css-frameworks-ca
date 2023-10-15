@@ -12,3 +12,15 @@ export async function getPostsUser() {
 
   return await response.json()
 } 
+
+// export async function getPostUser(id) {
+//   // if(!id) {
+//   //   throw new Error ("Get requires a postID");
+//   // }
+
+//   const getPostURL = `${API_SOCIAL_URL}${action}/${id}`;
+
+//   const response = await authFetch(getPostURL)
+
+//   return await response.json()
+// } 

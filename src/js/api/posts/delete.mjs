@@ -1,29 +1,34 @@
-// import { API_SOCIAL_URL } from "../constants.mjs";
+import { API_SOCIAL_URL } from "../constants.mjs";
 
-// import { authFetch } from "../authFetch.mjs";
-// import * as postMethods from "../posts";
+import { authFetch } from "../authFetch.mjs";
 
-// const action = "/posts";
-// const method = "delete";
+const deleteButton = document.querySelector("#removePostButton");
 
-// const queryString = document.location.search;
-// const params = new URLSearchParams(queryString);
-// const id = params.get("id");
+console.log()
+
+const action = "/posts";
+const method = "delete";
+
+const queryString = document.location.search;
+const params = new URLSearchParams(queryString);
+const id = params.get("id");
+
+const deleteURL = `${API_SOCIAL_URL}${action}/${id}`;
+
+export async function removePost() {
+  // event.preventDefault;
+
+  if(!id) {
+    throw new Error ("Delete requires a postID");
+  }
+
+  const response = await authFetch(deleteURL, {
+    method,
+  })
+
+  return await response.json()
+}
 
 
-// export async function removePost(id) {
-
-//   if(!id) {
-//     throw new Error ("Delete requires a postID");
-//   }
-
-//   const deletePostURL = `${API_SOCIAL_URL}${action}/${id}`;
-
-//   const response = await authFetch(deletePostURL, {
-//     method,
-//   })
-
-//   return await response.json()
-// }
-
+deleteButton.addEventListener("click", removePost);
 

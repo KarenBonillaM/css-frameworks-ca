@@ -15,6 +15,7 @@ const id = params.get("id");
 
 async function testPostTemplate() {
   const post = await postMethods.getPost(id);
+  console.log(post)
   const container = document.querySelector("#post");
   templates.renderPostTemplate(post, container);
 }
