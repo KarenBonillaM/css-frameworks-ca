@@ -17,7 +17,8 @@
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
       integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT"
       crossorigin="anonymous"></script>
-    <script src="/src/js/index.mjs" defer type="module"></script>
+    <script src="/src/js/handlers/search.mjs" defer type="module"></script>
+    <script src="/src/js/templates/posts.mjs" defer type="module"></script>
   </head>
   <body>
     <header>
@@ -65,17 +66,15 @@
                 </ul>
               </li>
             </ul>
-            <form class="d-flex" role="search">
-              <input
-                class="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search" />
-              <button
-                class="btn btn-outline-success bg-primary border border-0"
-                type="submit">
-                Search
-              </button>
+            <form class="d-flex" role="search" id="search-container">
+              <i class="fa-solid fa-magnifying-glass magnifying-glass">
+                <input
+                  class="form-control me-2"
+                  type="search"
+                  id="search"
+                  placeholder="Search"
+                  aria-label="Search"
+              /></i>
             </form>
           </section>
         </section>
@@ -92,36 +91,65 @@
                     src="/images/profile-picture.jpg"
                     alt=""
                     class="img-fluid float-start img-profile" />
-                  <h3 class="text-dark">Henrik</h3>
+                  <h3 class="text-dark">Margarita</h3>
                   <p class="text-dark">
                     Food lover. Happy to share some recipes<3
                   </p>
                 </a>
               </div>
             </section>
-            <section id="posts-container" class="col-md-6">
+            <section id="posts-container" class="col-md-6 mx-2">
               <section id="new-post" class="row">
-                <form>
-                  <div class="fs-2 fw-bold text-center">
-                    <h1 for="newPost">New Recipe</h1>
+                <form id="createPost">
+                  <div class="mb-3">
+                    <div class="form-floating">
+                      <label for="">Title</label>
+                      <input
+                        class="form-control"
+                        type="text"
+                        name="title"
+                        required />
+                    </div>
                   </div>
-                  <textarea
-                    name="newPost"
-                    id="newPost"
-                    cols="30"
-                    rows="5"
-                    class="form-control">
-                  </textarea>
-                  <div class="d-grid col-3 mx-auto">
-                    <button
-                      type="submit"
-                      class="btn btn-primary mt-3 fw-bold text-uppercase">
-                      New Post
-                    </button>
+
+                  <div class="mb-3">
+                    <div class="form-floating">
+                      <label for="">Body</label>
+                      <textarea
+                        class="form-control"
+                        name="body"
+                        required></textarea>
+                    </div>
+                  </div>
+
+                  <!-- <!-- <div class="mb-3">
+                    <div class="form-floating">
+                      <label for="">Tags</label>
+                      <input
+                        class="form-control"
+                        type="text"
+                        id="tags"
+                        name="tags" />
+                    </div> -->
+                  <!-- </div> -->
+
+                  <div class="mb-3">
+                    <div class="form-floating">
+                      <label for="">Media</label>
+                      <input class="form-control" type="url" name="media" />
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="d-grid col-3 mx-auto">
+                      <button class="btn btn-primary border border-dark">
+                        Create Post
+                      </button>
+                    </div>
                   </div>
                 </form>
               </section>
-              <div id="posts"></div>
+              <div id="posts" class="postsContainer"></div>
             </section>
             <section id="quote-container" class="col">
               <div
