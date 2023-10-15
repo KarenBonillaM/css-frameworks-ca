@@ -21,7 +21,7 @@
       src="/src/js/templates/userPostsEdit.mjs"
       defer
       type="module"></script>
-    <script src="/src/js/api/posts/delete.mjs" defer type="module"></script>
+    <script src="/src/js/handlers/updatePost.mjs" defer type="module"></script>
   </head>
   <body>
     <header>
@@ -39,48 +39,6 @@
               <i
                 class="fa-sharp fa-solid fa-user text-light fs-2 user-icon"></i>
             </a>
-          </section>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <section class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle fs-3"
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false">
-                  Recipes
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Meat</a></li>
-                  <li><a class="dropdown-item" href="#">Vegan</a></li>
-                  <li><a class="dropdown-item" href="#">Seafood</a></li>
-                  <li><a class="dropdown-item" href="#">Breakfast</a></li>
-                </ul>
-              </li>
-            </ul>
-            <form class="d-flex" role="search">
-              <input
-                class="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search" />
-              <button
-                class="btn btn-outline-success bg-primary border border-0"
-                type="submit">
-                Search
-              </button>
-            </form>
           </section>
         </section>
       </nav>
@@ -114,12 +72,12 @@
                 </div>
               </div>
 
-              <div class="mb-3">
+              <!-- <div class="mb-3">
                 <div class="form-floating">
                   <label for="">Tags</label>
                   <input type="text" class="form-control" name="tags" />
                 </div>
-              </div>
+              </div> -->
 
               <div class="mb-3">
                 <div class="form-floating">

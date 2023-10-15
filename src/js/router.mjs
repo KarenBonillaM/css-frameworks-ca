@@ -13,15 +13,12 @@ export default function router() {
     case '/posts/index.html':
       listeners.setCreatePostFormListener()
       return;
-    case '/post/edit/index.html':
-      listeners.setUpdatePostListener()
-      return;
-    case '/profile/edit/index.html':
+    // case '/post/edit/index.html':
+    //   listeners.setUpdatePostListener()
+    //   return;
+    case '/profile/edit/':
       listeners.setUpdateProfileListener()
       return;
-    // case '/profile/index.html':
-    //   listeners.setPostsUserTemplateListener()
-    //   return;
 }
 }
 
