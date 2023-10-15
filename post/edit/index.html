@@ -21,6 +21,7 @@
       src="/src/js/templates/userPostsEdit.mjs"
       defer
       type="module"></script>
+    <script src="/src/js/api/posts/delete.mjs" defer type="module"></script>
   </head>
   <body>
     <header>
@@ -135,6 +136,13 @@
                 </div>
               </div>
             </form>
+            <div class="deletePostContainer">
+              <button
+                id="removePostButton"
+                class="btn btn-primary border border-dark">
+                Delete Post
+              </button>
+            </div>
           </div>
         </div>
       </section>
