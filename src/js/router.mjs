@@ -19,6 +19,9 @@ export default function router() {
     case '/profile/edit/index.html':
       listeners.setUpdateProfileListener()
       return;
+    case '/profile/index.html':
+      listeners.setPostsUserTemplateListener()
+      return;
 }
 }
 
