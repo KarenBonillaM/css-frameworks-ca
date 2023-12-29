@@ -6,17 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Home page for Food is Love. People sharing delicious recipes" />
+      content="Feed posts page for Food is Love. People sharing delicious recipes" />
     <script
       src="https://kit.fontawesome.com/ad1493ca4b.js"
       crossorigin="anonymous"></script>
-    <title>Home Page | Food is Love</title>
+    <title>Posts Content Feed | Food is Love</title>
     <link rel="stylesheet" href="/dist/css/index.css" />
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
       integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT"
       crossorigin="anonymous"></script>
+    <script
+      src="/src/js/api/profile/profileCard.mjs"
+      type="module"
+      defer></script>
+    <script src="/src/js/api/posts/read.mjs" type="module" defer></script>
+    <script src="/src/js/handlers/search.mjs" defer type="module"></script>
+    <script src="/src/js/handlers/filterPosts.mjs" defer type="module"></script>
   </head>
   <body>
     <header>
@@ -30,7 +37,7 @@
             </a>
           </section>
           <section id="user-icon" class="col-1 text-center text-light">
-            <a href="/profile/index.html">
+            <a class="user-icon-link">
               <i
                 class="fa-sharp fa-solid fa-user text-light fs-2 user-icon"></i>
             </a>
@@ -57,25 +64,32 @@
                   Recipes
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Meat</a></li>
-                  <li><a class="dropdown-item" href="#">Vegan</a></li>
-                  <li><a class="dropdown-item" href="#">Seafood</a></li>
-                  <li><a class="dropdown-item" href="#">Breakfast</a></li>
+                  <li class="dropdown-item" id="dinner">Dinner</li>
+                  <li class="dropdown-item" id="italian">Italian</li>
+                  <li class="dropdown-item" id="breakfast">Breakfast</li>
+                  <li class="dropdown-item" id="desserts">Desserts</li>
                 </ul>
               </li>
             </ul>
-            <form class="d-flex" role="search">
+            <form
+              class="d-flex search-form"
+              role="search"
+              id="search-container">
               <input
                 class="form-control me-2"
                 type="search"
+                id="search"
                 placeholder="Search"
                 aria-label="Search" />
-              <button
-                class="btn btn-outline-success bg-primary border border-0"
-                type="submit">
-                Search
-              </button>
+              <i class="fa-solid fa-magnifying-glass magnifying-glass"></i>
             </form>
+          </section>
+          <section class="nav-list">
+            <ul class="d-flex align-items-center">
+              <a class="nav-list-item fs-4" href="/profile/login/"
+                ><li>Logout</li></a
+              >
+            </ul>
           </section>
         </section>
       </nav>
@@ -84,246 +98,12 @@
       <section id="feed-container" class="container">
         <div class="container text-center">
           <div class="row">
+            <h1 class="mt-3">Recipes</h1>
             <section id="user-info-card" class="col">
-              <div class="col bg-primary p-4 m-3 card">
-                <a href="/profile/index.html">
-                  <img
-                    src="/images/profile-picture.jpg"
-                    alt=""
-                    class="img-fluid float-start img-profile" />
-                  <h3 class="text-dark">Henrik</h3>
-                  <p class="text-dark">
-                    Food lover. Happy to share some recipes<3
-                  </p>
-                </a>
-              </div>
+              <div class="col bg-primary p-4 m-3 card card-profile"></div>
             </section>
-            <section id="posts-container" class="col-md-6">
-              <section id="new-post" class="row">
-                <form>
-                  <div class="fs-2 fw-bold text-center">
-                    <h1 for="newPost">New Recipe</h1>
-                  </div>
-                  <textarea
-                    name="newPost"
-                    id="newPost"
-                    cols="30"
-                    rows="5"
-                    class="form-control">
-                  </textarea>
-                  <div class="d-grid col-3 mx-auto">
-                    <button
-                      type="submit"
-                      class="btn btn-primary mt-3 fw-bold text-uppercase">
-                      New Post
-                    </button>
-                  </div>
-                </form>
-              </section>
-              <div class="row post my-5 py-3 bg-secondary card">
-                <div class="post-header d-flex align-items-center py-3">
-                  <div class="d-flex col-3 align-items-center">
-                    <span class="userimage"
-                      ><img
-                        src="/images/user1.jpg"
-                        alt=""
-                        class="img-fluid post-img"
-                    /></span>
-                    <span class="username fs-6 ps-2 fw-medium">Mats</span>
-                  </div>
-                  <div class="col text-start ps-5">
-                    <h2 class="post-title fw-bold">Steak and chilli</h2>
-                  </div>
-                </div>
-                <img
-                  src="/images/food1.jpg"
-                  alt=""
-                  class="img-thumbnail bg-secondary border border-0" />
-                <p class="mt-4">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Explicabo harum blanditiis repellendus, corporis possimus
-                  velit quo veritatis obcaecati reprehenderit. Eligendi rem
-                  sequi perspiciatis quasi quod sapiente debitis libero dolor
-                  similique.
-                </p>
-                <div class="row align-items-center pt-3">
-                  <div class="col">
-                    <i class="fa-solid fa-thumbs-up"></i>
-                  </div>
-                  <div class="col"><i class="fa-solid fa-message"></i></div>
-                  <div class="col"><i class="fa-solid fa-share"></i></div>
-                </div>
-              </div>
-              <div class="row post my-5 py-3 bg-secondary card">
-                <div class="post-header d-flex align-items-center py-3">
-                  <div class="d-flex col-3 align-items-center">
-                    <span class="userimage"
-                      ><img
-                        src="/images/user2.jpg"
-                        alt=""
-                        class="img-fluid post-img"
-                    /></span>
-                    <span class="username fs-6 ps-2 fw-medium">Per</span>
-                  </div>
-                  <div class="col text-start ps-5">
-                    <h2 class="post-title fw-bold">Salmon and almods</h2>
-                  </div>
-                </div>
-                <img
-                  src="/images/food2.jpg"
-                  alt=""
-                  class="img-thumbnail bg-secondary border border-0" />
-                <p class="mt-4">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Explicabo harum blanditiis repellendus, corporis possimus
-                  velit quo veritatis obcaecati reprehenderit. Eligendi rem
-                  sequi perspiciatis quasi quod sapiente debitis libero dolor
-                  similique.
-                </p>
-                <div class="row align-items-center pt-3">
-                  <div class="col">
-                    <i class="fa-solid fa-thumbs-up"></i>
-                  </div>
-                  <div class="col"><i class="fa-solid fa-message"></i></div>
-                  <div class="col"><i class="fa-solid fa-share"></i></div>
-                </div>
-              </div>
-              <div class="row post my-5 py-3 bg-secondary card">
-                <div class="post-header d-flex align-items-center py-3">
-                  <div class="d-flex col-3 align-items-center">
-                    <span class="userimage"
-                      ><img
-                        src="/images/user3.jpg"
-                        alt=""
-                        class="img-fluid post-img"
-                    /></span>
-                    <span class="username fs-6 ps-2 fw-medium">Ana</span>
-                  </div>
-                  <div class="col text-start ps-5">
-                    <h2 class="post-title fw-bold">Breakfast toasts</h2>
-                  </div>
-                </div>
-                <img
-                  src="/images/food3.jpg"
-                  alt=""
-                  class="img-thumbnail bg-secondary border border-0" />
-                <p class="mt-4">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Explicabo harum blanditiis repellendus, corporis possimus
-                  velit quo veritatis obcaecati reprehenderit. Eligendi rem
-                  sequi perspiciatis quasi quod sapiente debitis libero dolor
-                  similique.
-                </p>
-                <div class="row align-items-center pt-3">
-                  <div class="col">
-                    <i class="fa-solid fa-thumbs-up"></i>
-                  </div>
-                  <div class="col"><i class="fa-solid fa-message"></i></div>
-                  <div class="col"><i class="fa-solid fa-share"></i></div>
-                </div>
-              </div>
-              <div class="row post my-5 py-3 bg-secondary card">
-                <div class="post-header d-flex align-items-center py-3">
-                  <div class="d-flex col-3 align-items-center">
-                    <span class="userimage"
-                      ><img
-                        src="/images/user4.jpg"
-                        alt=""
-                        class="img-fluid post-img"
-                    /></span>
-                    <span class="username fs-6 ps-2 fw-medium">Fredrik </span>
-                  </div>
-                  <div class="col text-start ps-5">
-                    <h2 class="post-title fw-bold">Margarita Pizza</h2>
-                  </div>
-                </div>
-                <img
-                  src="/images/food4.jpg"
-                  alt=""
-                  class="img-thumbnail bg-secondary border border-0" />
-                <p class="mt-4">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Explicabo harum blanditiis repellendus, corporis possimus
-                  velit quo veritatis obcaecati reprehenderit. Eligendi rem
-                  sequi perspiciatis quasi quod sapiente debitis libero dolor
-                  similique.
-                </p>
-                <div class="row align-items-center pt-3">
-                  <div class="col">
-                    <i class="fa-solid fa-thumbs-up"></i>
-                  </div>
-                  <div class="col"><i class="fa-solid fa-message"></i></div>
-                  <div class="col"><i class="fa-solid fa-share"></i></div>
-                </div>
-              </div>
-              <div class="row post my-5 py-3 bg-secondary card">
-                <div class="post-header d-flex align-items-center py-3">
-                  <div class="d-flex col-3 align-items-center">
-                    <span class="userimage"
-                      ><img
-                        src="/images/user5.jpg"
-                        alt=""
-                        class="img-fluid post-img"
-                    /></span>
-                    <span class="username fs-6 ps-2 fw-medium">Maria</span>
-                  </div>
-                  <div class="col text-start ps-5">
-                    <h2 class="post-title fw-bold">Delicious Dumplings</h2>
-                  </div>
-                </div>
-                <img
-                  src="/images/food5.jpg"
-                  alt=""
-                  class="img-thumbnail bg-secondary border border-0" />
-                <p class="mt-4">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Explicabo harum blanditiis repellendus, corporis possimus
-                  velit quo veritatis obcaecati reprehenderit. Eligendi rem
-                  sequi perspiciatis quasi quod sapiente debitis libero dolor
-                  similique.
-                </p>
-                <div class="row align-items-center pt-3">
-                  <div class="col">
-                    <i class="fa-solid fa-thumbs-up"></i>
-                  </div>
-                  <div class="col"><i class="fa-solid fa-message"></i></div>
-                  <div class="col"><i class="fa-solid fa-share"></i></div>
-                </div>
-              </div>
-              <div class="row post my-5 py-3 bg-secondary card">
-                <div class="post-header d-flex align-items-center py-3">
-                  <div class="d-flex col-3 align-items-center">
-                    <span class="userimage"
-                      ><img
-                        src="/images/user6.jpg"
-                        alt=""
-                        class="img-fluid post-img"
-                    /></span>
-                    <span class="username fs-6 ps-2 fw-medium">Daniel</span>
-                  </div>
-                  <div class="col text-start ps-5">
-                    <h2 class="post-title fw-bold">Swedish pancakes</h2>
-                  </div>
-                </div>
-                <img
-                  src="/images/food6.jpg"
-                  alt=""
-                  class="img-thumbnail bg-secondary border border-0" />
-                <p class="mt-4">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Explicabo harum blanditiis repellendus, corporis possimus
-                  velit quo veritatis obcaecati reprehenderit. Eligendi rem
-                  sequi perspiciatis quasi quod sapiente debitis libero dolor
-                  similique.
-                </p>
-                <div class="row align-items-center pt-3">
-                  <div class="col">
-                    <i class="fa-solid fa-thumbs-up"></i>
-                  </div>
-                  <div class="col"><i class="fa-solid fa-message"></i></div>
-                  <div class="col"><i class="fa-solid fa-share"></i></div>
-                </div>
-              </div>
+            <section id="posts-container" class="col-md-6 mx-2">
+              <div id="posts" class="postsContainer"></div>
             </section>
             <section id="quote-container" class="col">
               <div
