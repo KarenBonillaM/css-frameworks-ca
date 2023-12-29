@@ -1,13 +1,11 @@
-const searchPostsUser = document.querySelector("#searchPostsUser");
-// const searchButton = document.querySelector("#search-button");
+const searchPostsUser = document.querySelector("#search");
+
 const postsContainerPostsUser = document.querySelector(".postsUserContainer")
 
   searchPostsUser.onkeyup = function() {
-    const searchBox = document.querySelector("#searchPostsUser").value.toLowerCase();
+    const searchBox = document.querySelector("#search").value.toLowerCase();
       const post = document.querySelectorAll(".post")
       const postTitle = postsContainerPostsUser.getElementsByTagName("h2");
-    
-    
     
       for(let i = 0; i < postTitle.length; i++) {
         let match = post[i].getElementsByTagName("h2")[0];
