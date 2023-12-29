@@ -15,8 +15,6 @@ export async function register(profile) {
     body
   })
 
-  console.log(response)
-
   const result = await response.json()
   alert("You are now registered")
   return result
