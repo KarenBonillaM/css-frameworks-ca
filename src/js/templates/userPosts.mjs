@@ -1,4 +1,4 @@
-import * as templatesUser from "./userPostEdit.mjs";
+import * as templatesUser from "./userPostDetails.mjs";
 import { getPost } from "../api/posts/read.mjs";
 
 const queryString = document.location.search;
@@ -7,8 +7,6 @@ const id = params.get("id");
 
  async function testPostUserTemplate() {
   const post = await getPost(id);
-
-  console.log(post)
   const container = document.querySelector("#postUser");
   templatesUser.renderPostUserTemplate(post, container);
 }
