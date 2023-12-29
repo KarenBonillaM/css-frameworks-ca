@@ -117,10 +117,12 @@ input:invalid + .invalid-feedback {
  background-color: $body-bg;
 }
 
+.btn-register:hover,
 .btn-login:hover {
   background-color: $body-bg;
 }
 
+.login-btn-container,
 .singUp-btn-container {
   margin: auto;
 }
