@@ -58,11 +58,11 @@ body {
 
 .post p {
   text-align: left;
-  padding-left: 45px;
 }
 
 .post-title {
   text-transform: uppercase;
+  margin: auto;
 }
 
 .img-profile {
@@ -162,6 +162,12 @@ input:invalid + .invalid-feedback {
 #quote-container,
 #user-info-card {
   padding-top: 30px;
+}
+
+//POST DETAILS
+
+#posts-container {
+  margin: auto;
 }
 
 
