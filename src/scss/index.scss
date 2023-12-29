@@ -80,3 +80,51 @@ input:invalid + .invalid-feedback {
   max-height: 450px;
   width: 700px;
 }
+
+
+//HOME PAGE
+
+#home-container {
+  height: 100vh;
+}
+
+#logo-home {
+  width: 28%;
+}
+
+.home-page-container {
+  background-color: #F24130;
+}
+
+.btn-home {
+  height: 60px;
+  width: 180px;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.title-home {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.home-buttons button:hover {
+ background-color: $body-bg;
+}
+
+
+
+@media(max-width: 799px) { 
+
+  //HOME PAGE
+  .btn-home {
+    height: 45px;
+    width: 120px;
+    font-size: 1em;
+  }
+
+  #logo-home {
+    width: 60%;
+}
+}
+
