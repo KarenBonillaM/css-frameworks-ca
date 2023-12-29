@@ -94,6 +94,16 @@ body {
   background-color: white;
 }
 
+.form-floating {
+  position: inherit;
+}
+
+.form-floating label {
+  position: inherit;
+  padding-bottom: 0px;
+  font-weight: bold;
+}
+
 .invalid-feedback {
   display: none;
 }
@@ -220,6 +230,19 @@ input:invalid + .invalid-feedback {
   margin: auto;
 }
 
+//NEW POST PAGE
+
+.new-post-container h2 {
+  text-align: center;
+}
+
+#new-post-container {
+  padding: 0 50px;
+}
+
+.new-post-media {
+  max-height: 650px;
+}
 
 @media(max-width: 799px) { 
 
