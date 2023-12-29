@@ -18,17 +18,47 @@ body {
   background-color: $tertiary;
 }
 
+.nav-list ul {
+  margin-bottom: 0px;
+}
+
+.nav-list-item {
+  text-decoration: none;
+  list-style: none;
+  color: white;
+}
+
+.search-form {
+  position: relative;
+}
+
+.magnifying-glass {
+  position: absolute;
+  right: 15px;
+  align-self: center;
+}
+
 .btn {
   background-color: $btn-g;
 }
 
 .post-img {
-  max-width: 60px;
-  border-radius: $circle;
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
 }
 
 .fa-solid {
   font-size: 1.5rem;
+}
+
+.post {
+  text-decoration: none;
+}
+
+.post p {
+  text-align: left;
+  padding-left: 45px;
 }
 
 .post-title {
@@ -41,6 +71,7 @@ body {
 
 .main-img {
   max-width: 300px;
+  max-height: 300px;
 }
 
 .bg-profile {
@@ -125,6 +156,12 @@ input:invalid + .invalid-feedback {
 .login-btn-container,
 .singUp-btn-container {
   margin: auto;
+}
+
+//FEED PAGE
+#quote-container,
+#user-info-card {
+  padding-top: 30px;
 }
 
 
