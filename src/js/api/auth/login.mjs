@@ -17,15 +17,22 @@ export async function login(profile) {
   });
 
   if(response.ok) {
-    window.location.pathname = "/posts/"
+    const {accessToken, ...user} = await response.json();
+
+    storage.save("token", accessToken);
+    storage.save("profile", user);
+
+    const encodeName = encodeURIComponent(user.name);
+
+    console.log(encodeName);
+
+    const redirectURL = `/profile/index.html?name=${encodeName}`;
+
+    window.location.href = redirectURL;
+  } else {
+  alert ("Login failed");
   }
-  const { accessToken, ...user } = await response.json()
-
-  storage.save("token", accessToken);
-
-  storage.save("profile", user);
-
-  //alert ("You are now logged in");
+  
 }
 
 
