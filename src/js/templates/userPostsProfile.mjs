@@ -8,18 +8,3 @@ async function testPostsUserTemplate() {
 }
 
 testPostsUserTemplate()
-
-// const queryString = document.location.search;
-// const params = new URLSearchParams(queryString);
-// const id = params.get("id");
-
-
-// console.log(id)
-//  async function testPostUserTemplate() {
-//   const post = await getPostsUser(id);
-//   console.log(post)
-//   const container = document.querySelector("#postUser");
-//   templatesUser.renderPostUserTemplate(post, container);
-// }
-
-// testPostUserTemplate()

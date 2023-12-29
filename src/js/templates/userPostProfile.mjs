@@ -72,49 +72,6 @@ export function postTemplateD(postData) {
   return post;
 }
 
-// export function postTemplateE(postData) {
-//   const post = document.createElement("div");
-//   post.setAttribute("href", `/post/edit/index.html?id=${postData.id}`)
-//   post.classList.add("post");
-//   post.classList.add("row");
-//   post.classList.add("my-5");
-//   post.classList.add("py-3");
-//   post.classList.add("card");
-//   post.classList.add("bg-secondary");
-//   post.classList.add("align-items-center");
-
-//   const postTitle = document.createElement("h2");
-//   postTitle.classList.add("post-title");
-//   postTitle.innerText = postData.title;
-  
-//   post.append(postTitle)
-
-//   if(postData.media) {
-//     const img = document.createElement('img');
-//     img.classList.add("postImg");
-//     img.src = postData.media;
-//     img.alt = `Image from ${postData.title}`;
-//     post.append(img)
-//   }
-
-//   if(!postData.media === true) {
-//     post.style.display = "none";
-//   }
-
-//   if(postData.body) {
-//     const body = document.createElement("p");
-//     body.innerText = postData.body;
-//     post.append(body)
-//   }
-
-  
-//   return post;
-// }
-
-// export function renderPostUserTemplate(postData, parent) {
-//   parent.append(postTemplateE(postData))
-// }
-
 export function renderPostsUserTemplates(postDataList, parent) {
   parent.append(...postDataList.map(postTemplateD))
 }
