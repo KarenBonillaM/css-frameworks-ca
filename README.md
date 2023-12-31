@@ -1,9 +1,5 @@
 # css-frameworks-ca
 
-Replace this text with a description of your social media project.
-
-# JavaScript2-ca FOOD IS LOVE
-
 ![image](./images/logo.png)
 
 Overview
