@@ -7,6 +7,7 @@ const id = params.get("id");
 
  async function testPostUserTemplate() {
   const post = await getPost(id);
+
   const container = document.querySelector("#postUser");
   templatesUser.renderPostUserTemplate(post, container);
 }

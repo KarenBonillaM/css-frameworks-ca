@@ -5,9 +5,6 @@ const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const name = params.get("name");
 
-console.log(name);
-
-
 const action = "/profiles/";
 const userPostURL = "/posts";
 
