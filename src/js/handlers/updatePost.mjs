@@ -1,4 +1,10 @@
-import { getPost, updatePost } from "../api/posts/index.mjs"
+import { getPost, updatePost } from "../api/posts/index.mjs";
+import { load } from "../storage/index.mjs";
+
+const user = load("profile")
+
+const userIconLink = document.querySelector(".user-icon-link");
+  userIconLink.href = `/profile/index.html?name=${user.name}`;
 
 export async function setUpdatePostListener() {
   const form = document.querySelector('#editPost');

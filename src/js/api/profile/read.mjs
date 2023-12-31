@@ -63,53 +63,53 @@ async function createProfileHTML() {
 createProfileHTML()
 
 
-export async function getUserFollowers(name) {
-  if(!name) {
-    throw new Error ("Get requires a name");
-  }
+// export async function getUserFollowers(name) {
+//   if(!name) {
+//     throw new Error ("Get requires a name");
+//   }
 
-  const getFollowersURL = `${API_SOCIAL_URL}${action}/${name}?_followers=true`;
+//   const getFollowersURL = `${API_SOCIAL_URL}${action}/${name}?_followers=true`;
 
-  const response = await authFetch(getFollowersURL)
+//   const response = await authFetch(getFollowersURL)
 
-  return await response.json()
-} 
+//   return await response.json()
+// } 
 
 
 
-async function createFollowersCard() {
+// async function createFollowersCard() {
 
-  const followers = await getUserFollowers(name);
+//   const followers = await getUserFollowers(name);
 
-  console.log(followers)
+//   console.log(followers)
   
-  const usersContainer = document.querySelector("#followers");
+//   const usersContainer = document.querySelector("#followers");
 
-  const followersContainer = document.createElement("div");
-  followersContainer.classList.add("followers-container");
+//   const followersContainer = document.createElement("div");
+//   followersContainer.classList.add("followers-container");
 
-  usersContainer.append(followersContainer);
+//   usersContainer.append(followersContainer);
 
   
-  const followerImage = document.createElement("img");
-  followerImage.classList.add("img-fluid");
-  followerImage.classList.add("post-img");
-  followerImage.src = user.avatar;
+//   const followerImage = document.createElement("img");
+//   followerImage.classList.add("img-fluid");
+//   followerImage.classList.add("post-img");
+//   followerImage.src = user.avatar;
   
-  if(user.avatar === null) {
-    followerImage.style.display = "none";
-  } else {
-    followerImage.style.display = "block"
-  }
+//   if(user.avatar === null) {
+//     followerImage.style.display = "none";
+//   } else {
+//     followerImage.style.display = "block"
+//   }
   
-  followersContainer.append(followerImage)
+//   followersContainer.append(followerImage)
 
 
-  const followerName = document.createElement("p");
-  followerName.innerText = user.name;
+//   const followerName = document.createElement("p");
+//   followerName.innerText = user.name;
 
-  followersContainer.append(followerName)
+//   followersContainer.append(followerName)
     
-  }
+//   }
 
-  createFollowersCard()
+//   createFollowersCard()
