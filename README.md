@@ -2,6 +2,8 @@
 
 ![image](./images/logo.png)
 
+GitHub project: https://github.com/users/KarenBonillaM/projects/1/views/1
+
 Overview
 
 This is a web application for a "FOOD IS LOVE" recipes platform, allowing users to share and find delicious recipes through a social media platform. The application is built using HTML, SCSS, JavaScript, and Bootstrap to create an intuitive and visually appealing user interface.
